@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Input = Wrappers.Input;
+
 public class OnClick : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -16,10 +18,7 @@ public class OnClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touches.Length != 0)
-        {
-            int x = 0;
-        }
+        #if (UNITY_IPHONE || UNITY_ANDROID)
         foreach (Touch touch in Input.touches)
         {
             if (touch.phase == TouchPhase.Began)
@@ -27,5 +26,11 @@ public class OnClick : MonoBehaviour
                 Score++;
             }
         }
+        #endif
+
+
+
     }
+
+
 }
