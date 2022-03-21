@@ -18,7 +18,6 @@ public class OnClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        #if (UNITY_IPHONE || UNITY_ANDROID)
         foreach (Touch touch in Input.touches)
         {
             if (touch.phase == TouchPhase.Began)
@@ -26,10 +25,6 @@ public class OnClick : MonoBehaviour
                 Score++;
             }
         }
-        #endif
-
-
-
     }
 
 
