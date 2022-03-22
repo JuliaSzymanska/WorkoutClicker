@@ -5,12 +5,10 @@ using Input = Wrappers.Input;
 public class RunOnClick: MonoBehaviour
 {
     private Actions _actions;
-    private bool _isRunning;
     private double _time;
     void Start()
     {
         _actions = GetComponent<Actions>();
-        _isRunning = false;
         _time = 0.0;
     }
 
